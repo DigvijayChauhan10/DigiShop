@@ -1,0 +1,42 @@
+<%- include('../parts/head.ejs')%>
+    <title>
+        <%=docTitle%>
+    </title>
+    <link rel="stylesheet" href="/css/products.css">
+    </head>
+
+    <body>
+        <%- include('../parts/shop-header.ejs')%>
+            <div class="container my-3">
+                <h2 id="category">Related Products of
+                    <%= categoryName%> Category</h2>
+                <div class="cardBox my-3">
+                    <% if(prods.length>0){
+                for(let product of prods){%>
+                        <div class="card mx-2" style="width: 15rem;height: 400px;">
+                            <img class="card-img-top" height="50%" src="<%= product.imageUrl%>" alt="Card image cap">
+                            <div class="card-body" style="height: 50%;">
+                                <p class="card-text" style="text-align: center;font-weight: 700;color: rgb(40, 155, 40);">
+                                    <%= product.title%>
+                                </p>
+                                <p class="card-text">
+                                    <%= product.price%>
+                                </p>
+                                <button class="btnUrl btn btn-success btn-sm btn-block mb-2" type="button">
+                                    <a style="color: white;" class="url" href="/product/<%= product._id%>">
+                                    SHOW
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                        <%}
+                }
+                else{%>
+                            <h2>Sorry!! No Categories.</h2>
+                            <%}%>
+                </div>
+
+            </div>
+    </body>
+
+    </html>

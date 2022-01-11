@@ -1,0 +1,83 @@
+<%- include('../parts/head.ejs')%>
+    <title>
+        <%=docTitle%>
+    </title>
+    <style>
+        h1 {
+            color: rgb(40, 155, 40);
+            text-align: center;
+        }
+        
+        .btn1 {
+            border: 2px solid rgb(40, 155, 40);
+            color: rgb(40, 155, 40);
+            background: transparent;
+            outline: none;
+        }
+        
+        .btn1:hover {
+            background: rgb(40, 155, 40);
+            color: #f2f2f2;
+            border: 2px solid rgb(40, 155, 40);
+            outline: none;
+        }
+    </style>
+    </head>
+
+    <body>
+        <%- include('../parts/header.ejs')%>
+
+            <div class="container my-3">
+                <h1>Update Product Details</h1>
+                <form class="my-3" action="" method="post">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Edit Name</label>
+                        <input type="hidden" value="<%= product._id%>" name="productId">
+                        <input type="text" value="<%= product.title%>" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Edit Image URL</label>
+                        <br>Preview of Old Image:
+                        <img height="100px" width="100px" src="<%= product.imageUrl%>" alt="">
+                        <input type="text" value="<%= product.imageUrl%>" name="imageUrl" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Edit Price</label>
+                        <input type="number" step=".1" value="<%= product.price%>" name="price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Edit Quntity</label>
+                        <input type="number" step=".1" value="<%= product.quntity%>" name="quntity" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoryId" class="form-label">Select Category</label>
+                        <select name="categoryId" id="" class="form-control">                            <% if(cats.length>0){
+                                for(let category of cats){
+                                    %>
+                                    <% if(product.categoryId.toString()===category._id.toString()){%>
+                            <option selected value="<%= category._id%>"><%= category.title%></option>
+                                    <%}
+                                    else{%>
+                                        <option value="<%= category._id%>"><%= category.title%></option>
+                                    <%}%>   
+                            <%}
+                            }
+                        
+                            else{%>
+                                <p>No Categories.</p>
+                            <%} %>
+                        </select>
+
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Edit Description</label>
+                        <textarea class="form-control" name="des" id=""><%= product.description%></textarea>
+                    </div>
+                    <button type="submit" class="btn1 btn-primary">UPDATE PRODUCT</button>
+                </form>
+            </div>
+
+    </body>
+
+    </html>

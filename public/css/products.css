@@ -1,0 +1,17 @@
+.cardBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width:1024px) {
+    .cardBox {
+        flex-direction: column;
+    }
+    .card {
+        margin-top: 10px;
+    }
+}

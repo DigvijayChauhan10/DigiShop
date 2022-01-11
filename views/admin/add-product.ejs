@@ -1,0 +1,70 @@
+<%- include('../parts/head.ejs')%>
+    <title>
+        <%=docTitle%>
+    </title>
+    <style>
+        h1 {
+            color: rgb(40, 155, 40);
+            text-align: center;
+        }
+        
+        .btn1 {
+            border: 2px solid rgb(40, 155, 40);
+            color: rgb(40, 155, 40);
+            background: transparent;
+            outline: none;
+        }
+        
+        .btn1:hover {
+            background: rgb(40, 155, 40);
+            color: #f2f2f2;
+            border: 2px solid rgb(40, 155, 40);
+            outline: none;
+        }
+    </style>
+    </head>
+
+    <body>
+        <%- include('../parts/header.ejs')%>
+            <div class="container my-2">
+                <h1>Add New Product</h1>
+                <form class="my-2" action="" method="post">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Name</label>
+                        <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Image URL</label>
+                        <input type="text" name="imageUrl" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Price</label>
+                        <input type="number" step=".1" name="price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Quntity</label>
+                        <input type="number" step=".1" name="quntity" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoryId" class="form-label">Select Category</label>
+                        <select name="categoryId" id="" class="form-control">
+                            <% if(categories.length>0){
+                            for(let category of categories){%>
+                            <option value="<%= category._id%>"><%= category.title%></option>
+                            <%}
+                    }
+                    else{%>
+                                <h2>Sorry!! No Categories.</h2>
+                                <%}%>
+                            </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Description</label>
+                        <textarea class="form-control" name="des" id=""></textarea>
+                    </div>
+                    <button type="submit" class="btn1 btn-primary">ADD PRODUCT</button>
+                </form>
+            </div>
+    </body>
+
+    </html>

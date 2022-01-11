@@ -1,0 +1,38 @@
+<%- include('../parts/head.ejs')%>
+    <title>
+        <%=docTitle%>
+    </title>
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+        <%- include('../parts/shop-header.ejs')%>
+
+
+            <div class="product">
+                <div class="pro_image">
+                    <img src="<%= product.imageUrl%>" alt="">
+                </div>
+                <div class="pro_info">
+                    <h2>
+                        <%= product.title%>
+                    </h2>
+
+                    <h5>M.R.P.&nbsp;:&nbsp; <span class="price"><%= product.price%>&nbsp;&nbsp;₹</span></h5>
+
+                    <h5 class="green">In stock.</h5>
+                    <h5>About this item</h5>
+                    <p>
+                        <%= product.description%>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="buttons">
+                        <button class="buynow">Buy Now</button>
+                        <button class="addcart"><a>Add to Cart</a></button></div>
+                </div>
+            </div>
+
+    </body>
+
+    </html>

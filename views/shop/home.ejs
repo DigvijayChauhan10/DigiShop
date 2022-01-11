@@ -1,0 +1,95 @@
+<%- include('../parts/head.ejs')%>
+    <title>
+        <%=docTitle%>
+    </title>
+    <link rel="stylesheet" href="/css/home.css">
+    </head>
+
+    <body>
+        <%- include('../parts/shop-header.ejs')%>
+            <div class="container">
+                <div id="carouselExampleIndicators" class="carousel slide slider my-5" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active image">
+                            <img class="d-block w-100 width" src="Images/Slider2.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item image">
+                            <img class="d-block w-100 width" src="Images/Slider3.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item image">
+                            <img class="d-block w-100 width" src="Images/Slider1.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="container my-3">
+                <h2 id="category">Shop By Category</h2>
+                <div class="cardBox my-3">
+                    <% if(cats.length>0){
+                    for(let category of cats){%>
+                        <div class="card mx-2" style="width: 15rem;">
+                            <img class="card-img-top" src="<%= category.imageUrl%>" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;font-weight: 700;color: rgb(40, 155, 40);">
+                                    <%= category.title%>
+                                </p>
+                                <p class="card-text">
+                                    <%= category.description%>
+                                </p>
+                                <button class="btnUrl btn btn-success btn-sm btn-block mb-2" type="button">
+                                        <a class="url" href="/products/<%= category._id%>">
+                                        Show Products
+                                        </a>
+                                    </button>
+                            </div>
+                        </div>
+                        <%}
+                    }
+                    else{%>
+                            <h2>Sorry!! No Categories.</h2>
+                            <%}%>
+                </div>
+
+            </div>
+            <div class="container my-3">
+                <h2>Latest Products</h2>
+                <div class="cardBox my-3">
+                    <% if(prods.length>0){
+                    for(let product of prods){%>
+                        <div class="card mx-2" style="width: 15rem;height: 400px;">
+                            <img class="card-img-top" height="60%" src="<%= product.imageUrl%>" alt="Card image cap">
+                            <div class="card-body" height="40%">
+                                <p class="card-text" style="text-align: center;font-weight: 700;color: rgb(40, 155, 40);">
+                                    <%= product.title%>
+                                </p>
+                                <button class="btnUrl btn btn-success btn-sm btn-block mb-2" type="button">
+                                        <a class="url" href="/product/<%= product._id%>">
+                                        Show 
+                                        </a>
+                                    </button>
+                            </div>
+                        </div>
+                        <%}
+                    }
+                    else{%>
+                            <h2>Sorry!! No Categories.</h2>
+                            <%}%>
+                </div>
+
+            </div>
+    </body>
+
+    </html>

@@ -1,0 +1,217 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #edf1f4;
+}
+
+.dropdown-menu a:hover {
+    color: #343a40;
+}
+
+.product {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.product .pro_image {
+    position: relative;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product .pro_image img {
+    position: relative;
+    width: 400px;
+}
+
+.product .pro_info {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product .pro_info h2 {
+    position: relative;
+    font-size: 50px;
+    text-align: left;
+    color: rgb(40, 155, 40);
+    margin-top: 5%;
+}
+
+.product .pro_info h5 {
+    font-size: 20px;
+    color: #ff0000;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.product .pro_info ul {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.product .pro_info ul li {
+    position: relative;
+    font-size: 15px;
+}
+
+.product .pro_info .green {
+    color: #88b24c;
+}
+
+.product .pro_info .buttons {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.product .pro_info .buttons button {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin-left: 20px;
+}
+
+.product .pro_info .buttons .buynow {
+    background: #3475ca;
+    color: #f2f2f2;
+}
+
+.product .pro_info .buttons .addcart {
+    background: #F1C40F;
+    color: #f2f2f2;
+}
+
+.product .pro_info .buttons .addcart a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+.rheading {
+    position: relative;
+    font-size: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.related_pro {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.related_pro .rpro {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: 2px solid #edf1f4;
+    border-radius: 10px;
+}
+
+.related_pro .rpro img {
+    position: relative;
+    width: 100%;
+    height: 65%;
+}
+
+.related_pro .rpro h5 {
+    position: relative;
+    text-align: center;
+    font-size: 22px;
+    color: #88b24c;
+}
+
+.related_pro .rpro button {
+    position: relative;
+    margin-left: 90px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #88b24c;
+    color: #f2f2f2;
+    border: none;
+    outline: none;
+}
+
+.related_pro .rpro button a {
+    text-decoration: none;
+    color: #f2f2f2;
+}
+
+@media screen and (max-width:1024px) {
+    .product {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .product .pro_image {
+        position: relative;
+        width: 100%;
+        height: 40%;
+        margin-bottom: 20px;
+    }
+    .product .pro_image img {
+        position: relative;
+        width: 200px;
+    }
+    .product .pro_info {
+        position: relative;
+        width: 100%;
+        height: 60%;
+        display: flex;
+    }
+    .product .pro_info h2 {
+        position: relative;
+        font-size: 30px;
+        text-align: center;
+    }
+    .product .pro_info h5 {
+        position: relative;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+    .product .pro_info ul li {
+        position: relative;
+        font-size: 15px;
+        margin-left: 10px;
+    }
+    .product .pro_info p {
+        position: relative;
+        margin-left: 10px;
+    }
+    .product .pro_info .buttons {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .product .pro_info .buttons button {
+        position: relative;
+        margin: 10px;
+    }
+}

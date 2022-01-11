@@ -1,0 +1,49 @@
+<%- include('../parts/head.ejs')%>
+    <title>
+        <%=docTitle%>
+    </title>
+    <style>
+        h1 {
+            color: rgb(40, 155, 40);
+            text-align: center;
+        }
+        
+        .btn1 {
+            border: 2px solid rgb(40, 155, 40);
+            color: rgb(40, 155, 40);
+            background: transparent;
+            outline: none;
+        }
+        
+        .btn1:hover {
+            background: rgb(40, 155, 40);
+            color: #f2f2f2;
+            border: 2px solid rgb(40, 155, 40);
+            outline: none;
+        }
+    </style>
+    </head>
+
+    <body>
+        <%- include('../parts/header.ejs')%>
+            <div class="container my-5">
+                <h1>Add New Category</h1>
+                <form class="my-3" action="" method="post">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Name</label>
+                        <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Image URL</label>
+                        <input type="text" name="imageUrl" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Description</label>
+                        <textarea class="form-control" name="des" id=""></textarea>
+                    </div>
+                    <button type="submit" class="btn1 btn-primary">ADD CATEGORY</button>
+                </form>
+            </div>
+    </body>
+
+    </html>
